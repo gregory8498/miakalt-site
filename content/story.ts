@@ -101,7 +101,7 @@ export const chapters: Chapter[] = [
     paragraphs: [
       [
         {
-          text: "Mia brings grounding and mind-body awareness into both the studio and the therapy room. She completed 200-hour training recognized by Yoga Alliance in 2023, and has taught at ",
+          text: "I bring grounding and mind-body awareness into both the studio and the therapy room. I completed a 200-hour training recognized by Yoga Alliance in 2023, and I’ve taught at ",
         },
         {
           text: "CorePower Yoga",
@@ -129,7 +129,7 @@ export const chapters: Chapter[] = [
     paragraphs: [
       [
         {
-          text: "Mia earned her master’s in Mental Health Counseling from Northwestern University, where she completed clinical training at ",
+          text: "I earned my master’s in Mental Health Counseling from Northwestern University, where I completed clinical training at ",
         },
         { text: "Turning Point", href: "https://www.tpoint.org/" },
         { text: " and " },
@@ -138,7 +138,7 @@ export const chapters: Chapter[] = [
           href: "https://www.family-institute.org/",
         },
         {
-          text: ". There she worked with a wide range of clients and clinical presentations, including depression, anxiety, bipolar disorder, body image, self-esteem, grief, and life transitions.",
+          text: ". There I worked with a wide range of clients and clinical presentations, including depression, anxiety, bipolar disorder, body image, self-esteem, grief, and life transitions.",
         },
       ],
       [
@@ -149,23 +149,18 @@ export const chapters: Chapter[] = [
           text: "Mindfulness & Culture Lab",
           href: "https://www.family-institute.org/research-scholarship/mindfulness-culture",
         },
-        { text: " at " },
         {
-          text: "The Family Institute",
-          href: "https://www.family-institute.org/",
-        },
-        {
-          text: ", Mia studied Radically Open Dialectical Behavior Therapy (RO-DBT), an emerging treatment for treatment-resistant populations.",
+          text: " at The Family Institute, I studied Radically Open Dialectical Behavior Therapy (RO-DBT), an emerging treatment for treatment-resistant populations.",
         },
       ],
       [
         {
-          text: "She holds bachelor’s degrees in Political Science and Psychology from the University of Michigan.",
+          text: "I hold bachelor’s degrees in Political Science and Psychology from the University of Michigan.",
         },
       ],
       [
         {
-          text: "Mia is a Licensed Associate Counselor in Arizona (LAC-23474), supervised by Abra Arlinsky, LPC.",
+          text: "I’m a Licensed Associate Counselor in Arizona (LAC-23474).",
         },
       ],
     ],
