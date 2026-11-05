@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f3eee6;
+  --sand: #f6efe4;
+  --sea: #1e3330;
+  --char: #2c2824;
+  --ink: #1c1915;
+  --cream: #f7f3ec;
+  color-scheme: light;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-fraunces);
+  --color-paper: var(--paper);
+  --color-sand: var(--sand);
+  --color-sea: var(--sea);
+  --color-char: var(--char);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+::selection {
+  background: #c9ddd6;
+  color: var(--ink);
+}
+
+.chapter {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.hero {
+  view-timeline-name: --hero;
+  view-timeline-axis: block;
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-media {
+      animation: hero-zoom linear both;
+      animation-timeline: --hero;
+      animation-range: exit 0% exit 100%;
+    }
+
+    .hero-copy {
+      animation: hero-fade linear both;
+      animation-timeline: --hero;
+      animation-range: exit 0% exit 42%;
+    }
+  }
+}
+
+@keyframes hero-zoom {
+  to {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes hero-fade {
+  to {
+    opacity: 0;
+    transform: translateY(-1.25rem);
+  }
+}
+
+.pill .arrow {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.pill:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-media,
+  .hero-copy,
+  .pill .arrow {
+    animation: none;
+    transition: none;
+  }
 }
