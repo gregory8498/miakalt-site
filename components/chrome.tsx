@@ -35,10 +35,10 @@ export function Chrome() {
       </a>
 
       <nav
-        className={`fixed top-6 right-6 z-40 max-w-[70%] ${tone}`}
+        className={`fixed top-6 right-6 z-40 ${tone}`}
         aria-label="Sections"
       >
-        <ul className="flex flex-wrap justify-end gap-x-5 gap-y-2">
+        <ul className="flex flex-nowrap justify-end gap-x-3 sm:gap-x-5">
           {index.map((item) => (
             <li key={item.href}>
               <a

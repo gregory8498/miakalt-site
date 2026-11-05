@@ -41,8 +41,14 @@ function Portrait({
   alt: string;
 }) {
   return (
-    <div className="relative h-[36svh] overflow-hidden bg-paper sm:h-auto sm:min-h-[100svh]">
-      <div className={zoom ? "hero-media absolute inset-0" : "absolute inset-0"}>
+    <div className="relative h-[calc(36svh+3.5rem)] overflow-hidden bg-paper pt-14 sm:h-auto sm:min-h-[100svh] sm:pt-0">
+      <div
+        className={
+          zoom
+            ? "hero-media absolute inset-x-0 top-14 bottom-0 sm:inset-0"
+            : "absolute inset-x-0 top-14 bottom-0 sm:inset-0"
+        }
+      >
         <Image
           src="/mia-headshot.png"
           alt={alt}
@@ -98,14 +104,16 @@ function LogoQuad({
 
 function SidePhoto({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative h-[46svh] overflow-hidden sm:h-auto sm:min-h-[100svh]">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes="(min-width: 1024px) 50vw, 58vw"
-        className="object-contain object-center"
-      />
+    <div className="relative h-[calc(46svh+3.5rem)] overflow-hidden bg-inherit pt-14 sm:h-auto sm:min-h-[100svh] sm:pt-0">
+      <div className="absolute inset-x-0 top-14 bottom-0 sm:inset-0">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(min-width: 1024px) 50vw, 58vw"
+          className="object-contain object-center"
+        />
+      </div>
     </div>
   );
 }
@@ -171,7 +179,7 @@ export function Story() {
           <div
             className={
               chapter.video || chapter.image || chapter.logos
-                ? "order-2 w-full px-6 py-16 sm:order-1 sm:px-10 sm:py-24 lg:px-16"
+                ? "w-full px-6 pt-16 pb-8 sm:px-10 sm:py-24 lg:px-16"
                 : "w-full max-w-3xl px-6 py-28 md:px-16"
             }
           >
@@ -190,17 +198,17 @@ export function Story() {
             </div>
           </div>
           {chapter.video ? (
-            <div className="order-1 flex items-center px-6 pt-24 sm:order-2 sm:px-10 sm:pt-0 lg:px-16">
+            <div className="flex items-center px-6 pb-16 sm:px-10 sm:pb-0 lg:px-16">
               <IntroVideo src={chapter.video} />
             </div>
           ) : null}
           {chapter.image ? (
-            <div className="order-1 sm:order-2">
+            <div>
               <SidePhoto src={chapter.image.src} alt={chapter.image.alt} />
             </div>
           ) : null}
           {chapter.logos ? (
-            <div className="order-1 flex items-center px-6 pt-24 sm:order-2 sm:px-10 sm:pt-0 lg:px-16">
+            <div className="flex items-center px-6 pb-16 sm:px-10 sm:pb-0 lg:px-16">
               <LogoQuad logos={chapter.logos} />
             </div>
           ) : null}
@@ -212,7 +220,7 @@ export function Story() {
         data-ink={connect.ink}
         className="chapter flex min-h-[100svh] flex-col overflow-hidden bg-paper text-ink sm:grid sm:grid-cols-[minmax(0,1fr)_58%] lg:grid-cols-2"
       >
-        <div className="relative z-10 order-2 flex flex-1 flex-col justify-center px-6 py-10 sm:order-1 sm:px-10 sm:py-24 lg:px-16">
+        <div className="relative z-10 flex flex-1 flex-col justify-center px-6 pt-16 pb-8 sm:px-10 sm:py-24 lg:px-16">
           <h2 className="font-serif text-[clamp(2.7rem,7vw,5.4rem)] leading-[0.98] tracking-tight">
             {connect.title}
           </h2>
@@ -227,7 +235,7 @@ export function Story() {
             />
           </div>
         </div>
-        <div className="order-1 sm:order-2">
+        <div>
           <Portrait alt="" />
         </div>
       </section>
